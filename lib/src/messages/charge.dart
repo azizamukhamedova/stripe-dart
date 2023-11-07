@@ -26,6 +26,38 @@ class Charge extends Message {
 }
 
 @JsonSerializable()
+class AccountCreateResponse extends Message {
+  final String id;
+  final bool charges_enabled;
+
+  AccountCreateResponse({
+    required this.id,
+    required this.charges_enabled,
+  });
+
+  factory AccountCreateResponse.fromJson(Map<String, dynamic> json) =>
+      _$AccountCreateResponseFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => _$AccountCreateResponseToJson(this);
+}
+
+@JsonSerializable()
+class AccountLinkResponse extends Message {
+  final String url;
+
+  AccountLinkResponse({
+    required this.url,
+  });
+
+  factory AccountLinkResponse.fromJson(Map<String, dynamic> json) =>
+      _$AccountLinkResponseFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => _$AccountLinkResponseToJson(this);
+}
+
+@JsonSerializable()
 class PaymentMethodDetails {
   final PaymentMethodDetailsCard? card;
 
