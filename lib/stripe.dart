@@ -1,6 +1,9 @@
 library stripe;
 
 import 'package:meta/meta.dart';
+import 'package:stripe/src/resources/account_create.dart';
+import 'package:stripe/src/resources/account_get.dart';
+import 'package:stripe/src/resources/account_link.dart';
 
 import 'src/client.dart';
 import 'src/resources/balance_transaction.dart';
@@ -54,6 +57,12 @@ class Stripe {
 
   /// https://stripe.com/docs/api/charges
   final ChargeResource charge;
+
+  final AccountCreateResource accountCreate;
+
+  final AccountLinkResource accountLink;
+
+  final AccountGetResource accountGet;
 
   /// https://stripe.com/docs/api/subscriptions
   final SubscriptionResource subscription;
