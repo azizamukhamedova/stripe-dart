@@ -86,5 +86,8 @@ class Stripe {
         product = ProductResource(client),
         subscription = SubscriptionResource(client),
         charge = ChargeResource(client),
-        balanceTransaction = BalanceTransactionResource(client);
+        balanceTransaction = BalanceTransactionResource(client),
+        accountCreate = AccountCreateResource(client),
+        accountLink = AccountLinkResource(client),
+        accountGet = AccountGetResource(client);
 }
