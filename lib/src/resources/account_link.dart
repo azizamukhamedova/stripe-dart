@@ -5,20 +5,17 @@ import 'package:stripe/messages.dart';
 import '../client.dart';
 import '_resource.dart';
 
-class AccountLinkResource extends Resource<AccountCreateResponse> {
+class AccountLinkResource extends Resource<AccountLinkResponse> {
   AccountLinkResource(Client client) : super(client);
 
-  Future<AccountCreateResponse> retrieve() async {
+  Future<AccountLinkResponse> retrieve(String connectedAccountId) async {
     final map = await post(
       'accounts',
       data: {
-        "type": "custom",
-        "capabilities": {
-          "card_payments": {"requested": true},
-          "transfers": {"requested": true},
-        },
+        "account": connectedAccountId,
+        "type": "account_onboarding",
       },
     );
-    return AccountCreateResponse.fromJson(map);
+    return AccountLinkResponse.fromJson(map);
   }
 }
