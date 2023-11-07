@@ -111,10 +111,23 @@ AccountCreateResponse _$AccountCreateResponseFromJson(
       charges_enabled: json['charges_enabled'] as bool,
     );
 
+Map<String, dynamic> _$AccountCreateResponseToJson(
+        AccountCreateResponse instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'charges_enabled': instance.charges_enabled,
+    };
+
 AccountLinkResponse _$AccountLinkResponseFromJson(Map<String, dynamic> json) =>
     AccountLinkResponse(
       url: json['url'] as String,
     );
+
+Map<String, dynamic> _$AccountLinkResponseToJson(
+        AccountLinkResponse instance) =>
+    <String, dynamic>{
+      'url': instance.url,
+    };
 
 const _$_ChargeObjectEnumMap = {
   _ChargeObject.charge: 'charge',
