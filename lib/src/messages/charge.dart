@@ -37,9 +37,6 @@ class AccountCreateResponse extends Message {
 
   factory AccountCreateResponse.fromJson(Map<String, dynamic> json) =>
       _$AccountCreateResponseFromJson(json);
-
-  @override
-  Map<String, dynamic> toJson() => _$AccountCreateResponseToJson(this);
 }
 
 @JsonSerializable()
@@ -52,9 +49,6 @@ class AccountLinkResponse extends Message {
 
   factory AccountLinkResponse.fromJson(Map<String, dynamic> json) =>
       _$AccountLinkResponseFromJson(json);
-
-  @override
-  Map<String, dynamic> toJson() => _$AccountLinkResponseToJson(this);
 }
 
 @JsonSerializable()

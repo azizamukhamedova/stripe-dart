@@ -104,6 +104,18 @@ Map<String, dynamic> _$ChargeToJson(Charge instance) => <String, dynamic>{
       'livemode': instance.livemode,
     };
 
+AccountCreateResponse _$AccountCreateResponseFromJson(
+        Map<String, dynamic> json) =>
+    AccountCreateResponse(
+      id: json['id'] as String,
+      charges_enabled: json['charges_enabled'] as bool,
+    );
+
+AccountLinkResponse _$AccountLinkResponseFromJson(Map<String, dynamic> json) =>
+    AccountLinkResponse(
+      url: json['url'] as String,
+    );
+
 const _$_ChargeObjectEnumMap = {
   _ChargeObject.charge: 'charge',
 };
