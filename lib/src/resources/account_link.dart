@@ -10,9 +10,11 @@ class AccountLinkResource extends Resource<AccountLinkResponse> {
 
   Future<AccountLinkResponse> retrieve(String connectedAccountId) async {
     final map = await post(
-      'accounts',
+      'account_links',
       data: {
         "account": connectedAccountId,
+        "refresh_url": "https://example.com/reauth",
+        "return_url": "https://example.com/return",
         "type": "account_onboarding",
       },
     );
