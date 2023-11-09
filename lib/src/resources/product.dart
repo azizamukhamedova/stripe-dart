@@ -13,6 +13,14 @@ class ProductResource extends Resource<Product> {
     return Product.fromJson(map);
   }
 
+  Future<Product> create(String name) async {
+    final map = await post(
+      'products',
+      data: {'name': name},
+    );
+    return Product.fromJson(map);
+  }
+
   Future<DataList<Product>> list([ListProductsRequest? request]) async {
     final map = await get('products', queryParameters: request?.toJson());
     return DataList<Product>.fromJson(

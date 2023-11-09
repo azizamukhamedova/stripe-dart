@@ -86,6 +86,8 @@ class CreatePaymentIntentRequest {
   /// statement descriptor. Maximum 22 characters for the concatenated descriptor.
   final String? statementDescriptorSuffix;
 
+  final String? transferGroup;
+
   CreatePaymentIntentRequest({
     required this.amount,
     required this.currency,
@@ -102,6 +104,7 @@ class CreatePaymentIntentRequest {
     this.shipping,
     this.statementDescriptor,
     this.statementDescriptorSuffix,
+    this.transferGroup,
   });
 
   factory CreatePaymentIntentRequest.fromJson(Map<String, dynamic> json) =>

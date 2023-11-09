@@ -9,8 +9,16 @@ class CheckoutSessionResource extends Resource<CheckoutSession> {
   CheckoutSessionResource(Client client) : super(client);
 
   /// Creates a Stripe Checkout Session.
-  Future<CheckoutSession> create(CreateCheckoutSessionRequest request) async {
-    final response = await post('checkout/sessions', data: request.toJson());
+  Future<CheckoutSession> create(List<Map<String, dynamic>> lineItems) async {
+    final response = await post(
+      'checkout/sessions',
+      data: {
+        "success_url": "https://example.com/reauth",
+        "cancel_url": "https://example.com/return",
+        "mode": "payment",
+        "line_items": lineItems,
+      },
+    );
     return CheckoutSession.fromJson(response);
   }
 

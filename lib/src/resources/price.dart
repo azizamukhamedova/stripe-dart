@@ -13,6 +13,18 @@ class PriceResource extends Resource<Price> {
     return Price.fromJson(map);
   }
 
+  Future<Price> create(int price, String productId) async {
+    final map = await post(
+      'prices',
+      data: {
+        'unit_amount': price * 100,
+        'currency': "usd",
+        'product': productId,
+      },
+    );
+    return Price.fromJson(map);
+  }
+
   Future<DataList<Price>> list([ListPricesRequest? request]) async {
     final map = await get('prices', queryParameters: request?.toJson());
     return DataList<Price>.fromJson(
