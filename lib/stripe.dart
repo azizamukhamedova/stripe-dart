@@ -4,6 +4,7 @@ import 'package:meta/meta.dart';
 import 'package:stripe/src/resources/account_create.dart';
 import 'package:stripe/src/resources/account_get.dart';
 import 'package:stripe/src/resources/account_link.dart';
+import 'package:stripe/src/resources/transfer.dart';
 
 import 'src/client.dart';
 import 'src/resources/balance_transaction.dart';
@@ -52,6 +53,8 @@ class Stripe {
   /// https://stripe.com/docs/api/prices
   final PriceResource price;
 
+  final TransferResource transfer;
+
   /// https://stripe.com/docs/api/products
   final ProductResource product;
 
@@ -83,6 +86,7 @@ class Stripe {
         refund = RefundResource(client),
         paymentIntent = PaymentIntentResource(client),
         price = PriceResource(client),
+        transfer = TransferResource(client),
         product = ProductResource(client),
         subscription = SubscriptionResource(client),
         charge = ChargeResource(client),
