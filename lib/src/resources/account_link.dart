@@ -13,8 +13,8 @@ class AccountLinkResource extends Resource<AccountLinkResponse> {
       'account_links',
       data: {
         "account": connectedAccountId,
-        "refresh_url": "https://example.com/reauth",
-        "return_url": "https://example.com/return",
+        "refresh_url": "https://azizamukhamedova.github.io/site/",
+        "return_url": "https://azizamukhamedova.github.io/site2/",
         "type": "account_onboarding",
       },
     );

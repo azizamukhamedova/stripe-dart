@@ -13,8 +13,8 @@ class CheckoutSessionResource extends Resource<CheckoutSession> {
     final response = await post(
       'checkout/sessions',
       data: {
-        "success_url": "https://example.com/reauth",
-        "cancel_url": "https://example.com/return",
+        "cancel_url": "https://azizamukhamedova.github.io/site/",
+        "return_url": "https://azizamukhamedova.github.io/site2/",
         "mode": "payment",
         "line_items": lineItems,
       },
